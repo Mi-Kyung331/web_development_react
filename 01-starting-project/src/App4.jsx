@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [ selectedTopic, setSelectedTopic ] = useState('');
+  const [ selectedTopic, setSelectedTopic ] = useState();
   
 
   function handSelect(selectedTopic) {
@@ -43,8 +43,7 @@ function App() {
             <TabButton onSelect={() => handSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handSelect('state')}>State</TabButton>
           </menu>
-
-          {selectedTopic === '' ? <h3>버튼을 클릭하세요</h3> :
+          {selectedTopic === undefined ? <h3>버튼을 클릭하세요</h3> :
           <div id="tab-content">
           <h3>{EXAMPLES[selectedTopic]['title']}</h3>
           <p>{EXAMPLES[selectedTopic].description}</p>
@@ -54,6 +53,7 @@ function App() {
             </code>
           </pre>
         </div>}
+          
 
         </section>
       </main>
