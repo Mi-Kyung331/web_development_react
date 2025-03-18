@@ -1,5 +1,4 @@
 // Context API 이용하기 위한 import
-import { Children } from "react";
 import { createContext, useState } from "react";
 
 const data = [
@@ -40,12 +39,12 @@ const KPopContext = createContext();
 
 // Provider 컴포넌트를 리턴하는 KPopContextProvider를 생성
 const KPopContextProvider = ({children}) => {
-  const [playList, setPlaylist] = useState(data);
+  const [playlist, setPlaylist] = useState(data);
 
   return (
-    <KPopContextProvider value={{data, playList, setPlaylist}}>
+    <KPopContext.Provider value={{data, playlist, setPlaylist}}>
       {children}
-    </KPopContextProvider>
+    </KPopContext.Provider>
   );
 }
 
