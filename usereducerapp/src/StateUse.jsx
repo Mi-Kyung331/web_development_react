@@ -15,7 +15,7 @@ export default function StateUse() {
 
   function up() {
     setCount(count + 1);
-    console.log('사과를 1개 구매하였습니다.')
+    console.log('사과를 1개 구매했습니다.');
   }
 
   return (
@@ -23,7 +23,7 @@ export default function StateUse() {
       <p>현재 내가 가지고 있는 사과 개수는 {count} 개</p>
       <input type="button" value="🍎 1개 먹음" onClick={down} />
       <br />
-      <br /> 
+      <br />
       <input type="button" value="🍎 1개 구매" onClick={up} />
       <br />
       <br />
