@@ -1,33 +1,25 @@
-import { useReducer } from 'react';
-import './App.css'
-import LoginForm from './components/LoginForm';
-import Reducer from './reducer/Reducer';
-
-
+import { useContext } from "react";
+import LoginForm from "./components/LoginForm";
+import Context from "./context/Context";
+import "./App.css";
 
 function App() {
-
-
-  const userInfo = {
-    id: 'react',
-    password: 'qwer1234',
-  };
-
-  const [ state, dispatch ] = useReducer(Reducer, { isLogin: false, message : '', })
-
-
+  const { state, dispatch } = useContext(Context);
 
   return (
     <div>
       {state.isLogin ? (
         <>
-          <strong>✨welcome✨</strong>
-          <button onClick={() => dispatch({type: "LOGOUT"})}>로그아웃</button>
+          <strong>Welcome user 🎊</strong>
+          <br />
+          <br />
+          <button onClick={() => dispatch({ type: "LOGOUT" })}>Sign Out</button>
         </>
       ) : (
-        <LoginForm state={state} dispatch={dispatch} />
+        <>
+          <LoginForm />
+        </>
       )}
-
     </div>
   );
 }
