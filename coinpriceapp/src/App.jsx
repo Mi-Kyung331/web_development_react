@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     fetch('https://api.coinpaprika.com/v1/tickers')
     .then(response => response.json())  // 2.
-
     // .then(json => console.log(json));
     .then(json => { // 3.
       setCoins(json);
