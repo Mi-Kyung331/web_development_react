@@ -49,8 +49,6 @@ function App() {
             <CoreConcepts {...CORE_CONCEPTS[1]}/>
             <CoreConcepts {...CORE_CONCEPTS[2]}/>
             <CoreConcepts {...CORE_CONCEPTS[3]}/>
-            <CoreConcepts />
-            <CoreConcepts />
           </ul>
         </section>
         <section id="examples">
